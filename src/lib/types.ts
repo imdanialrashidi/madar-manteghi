@@ -111,6 +111,9 @@ export interface CourseLogo {
 
 export interface CourseConfig {
   title: string;
+  /** Compact wordmark for the header lockup. Falls back to `title`.
+   *  Use when the full title is too long for the 36px header brand. */
+  shortTitle?: string;
   /** One-line promise shown under the hero title (configurable per course). */
   tagline?: string;
   /** Per-topic brand: change these two values and the header mark +

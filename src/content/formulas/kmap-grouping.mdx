@@ -1,0 +1,35 @@
+---
+type: formula
+title: "قانون گروه‌بندی کارنو"
+name: "قانون گروه‌بندی (K-map Grouping)"
+description: "اندازه‌های مجاز گروه، رابطهٔ اندازه با تعداد لیترال‌های حذف‌شده و قانون خواندن جمله از گروه."
+section: chapter-3
+difficulty: intermediate
+order: 1
+estimatedMinutes: 5
+tags: [کارنو, گروه‌بندی, Karnaugh]
+latex: "\\text{group of } 2^k \\text{ ones} \\Rightarrow k \\text{ literals eliminated}"
+concepts: [prime-implicant]
+conditions:
+  - "گروه باید مستطیلی از یک‌ها (در SOP) باشد."
+  - "پیچش لبه‌ها مجاز است: لبه‌های روبه‌رو همسایه‌اند."
+---
+
+## قانون گروه‌بندی چه می‌گوید؟
+
+<Formula
+  id="kmap-grouping"
+  latex={"\\text{group of } 2^k \\text{ ones} \\Rightarrow k \\text{ literals eliminated}"}
+  caption="هر دو برابر شدن گروه، یک لیترال حذف می‌کند"
+/>
+
+<FormulaBreakdown
+  title="اجزای قانون"
+  terms={[
+    { term: "2^k", label: "اندازهٔ گروه", detail: "فقط ۱، ۲، ۴ و ۸ (در نقشهٔ چهارمتغیره) مجازند" },
+    { term: "k", label: "تعداد لیترال‌های حذف‌شده", detail: "گروه ۲تایی یکی، ۴تایی دو تا و ۸تایی سه تا حذف می‌کند" },
+    { term: "\\text{ones}", label: "خانه‌های ۱", detail: "در ساده‌سازی SOP فقط یک‌ها گروه می‌شوند (در POS صفرها)" },
+  ]}
+/>
+
+و قانون خواندن: از گروه، فقط لیترال‌های **ثابت** می‌مانند (۱ خودش، ۰ نقیضش) و لیترال‌های متغیر حذف می‌شوند. این فرمول را با <a href="/examples/kmap-3var">مثال سه‌متغیره</a> و <a href="/examples/kmap-4var-dontcare">مثال چهارمتغیره</a> تمرین کن.

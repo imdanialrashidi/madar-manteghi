@@ -1,0 +1,32 @@
+---
+type: formula
+title: "خروجی مالتی‌پلکسر دوتایی"
+name: "مالتی‌پلکسر ۲ به ۱"
+description: "فرمول خروجی MUX دوتایی و الگوی تعمیم آن به MUXهای بزرگ‌تر."
+section: chapter-4
+difficulty: beginner
+order: 2
+estimatedMinutes: 4
+tags: [مالتی‌پلکسر, Multiplexer]
+latex: "Y = S'I_0 + SI_1"
+concepts: [multiplexer]
+---
+
+## خروجی MUX دوتایی چه می‌گوید؟
+
+<Formula
+  id="mux-2to1"
+  latex={"Y = S'I_0 + SI_1"}
+  caption="وقتی انتخاب صفر است ورودی صفر، وگرنه ورودی یک"
+/>
+
+<FormulaBreakdown
+  title="اجزای فرمول"
+  terms={[
+    { term: "S", label: "خط انتخاب", detail: "تعیین می‌کند کدام ورودی به خروجی برسد" },
+    { term: "I_0, I_1", label: "ورودی‌های داده", detail: "دو سیگنالی که یکی‌شان انتخاب می‌شود" },
+    { term: "Y", label: "خروجی", detail: "رونوشتِ ورودی انتخاب‌شده" },
+  ]}
+/>
+
+الگوی تعمیم: در MUX چهارتایی با دو خط انتخاب، چهار جمله می‌آید که هر کدام یک مین‌ترمِ خط‌های انتخاب AND شده با ورودی همان شماره است. ساختار همیشه همین است: «مین‌ترم انتخاب AND ورودی».

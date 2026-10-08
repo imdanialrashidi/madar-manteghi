@@ -1,0 +1,19 @@
+---
+/**
+ * KmapExplorer — Astro wrapper that hydrates the Karnaugh-map explorer island.
+ *
+ * Content authors write `<KmapExplorer />` in MDX. The island SSR-renders a
+ * worked default (Σm(1,3,5,7) minimizing to z), so no-JS readers see a real
+ * solved map and the client only adds cell editing.
+ */
+import KmapExplorer from '../../islands/course/KmapExplorer';
+
+interface Props {
+  initialVars?: number;
+  initialMinterms?: number[];
+}
+
+const { initialVars = 3, initialMinterms = [1, 3, 5, 7] } = Astro.props;
+---
+
+<KmapExplorer client:visible initialVars={initialVars} initialMinterms={initialMinterms} />

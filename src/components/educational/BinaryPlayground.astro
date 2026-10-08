@@ -1,0 +1,18 @@
+---
+/**
+ * BinaryPlayground — Astro wrapper that hydrates the binary explorer island.
+ *
+ * Content authors write `<BinaryPlayground />` in MDX. The island SSR-renders
+ * its initial state (47 in 8 bits), so no-JS readers already see a complete
+ * conversion table and the client only adds interactivity.
+ */
+import BinaryPlayground from '../../islands/course/BinaryPlayground';
+
+interface Props {
+  initial?: number;
+}
+
+const { initial = 47 } = Astro.props;
+---
+
+<BinaryPlayground client:visible initial={initial} />

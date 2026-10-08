@@ -1,0 +1,26 @@
+---
+type: concept
+title: "فرم‌های SOP و POS"
+short: "دو فرم استاندارد هر تابع: جمع مین‌ترم‌ها (SOP) و ضرب ماکس‌ترم‌ها (POS)."
+description: "تعریف SOP و POS، نمادهای سیگما و پی، و قاعدهٔ انتخاب میانشان بر اساس تعداد یک‌ها و صفرها."
+section: chapter-2
+difficulty: intermediate
+order: 3
+estimatedMinutes: 6
+tags: [SOP, POS, فرم استاندارد]
+formulas: [minterm-expansion, maxterm-expansion]
+---
+
+<Definition term="فرم SOP" id="sop-def">
+  حاصل‌جمع (OR) مین‌ترم‌های سطرهایی که خروجی تابع در آن‌ها ۱ است. نماد فشرده: <Formula inline latex={"F = \\Sigma m(\\text{فهرست شماره‌ها})"} />.
+</Definition>
+
+<Definition term="فرم POS" id="pos-def">
+  حاصل‌ضرب (AND) ماکس‌ترم‌های سطرهایی که خروجی تابع در آن‌ها ۰ است. نماد فشرده: <Formula inline latex={"F = \\Pi M(\\text{فهرست شماره‌ها})"} />.
+</Definition>
+
+نکتهٔ ظریف: فهرست شماره‌ها در دو فرم **مکمل** هم‌اند. اگر تابع سه‌متغیره در سطرهای ۱ و ۵ یک باشد، آن‌وقت <Formula inline latex={"F = \\Sigma m(1,5)"} /> و هم‌زمان <Formula inline latex={"F = \\Pi M(0,2,3,4,6,7)"} />. هر دو یک تابع‌اند، فقط از دو سمت (سطرهای یک در برابر سطرهای صفر) توصیفش کرده‌اند.
+
+## کدام فرم؟
+
+قاعدهٔ سرانگشتی: فرمی که **جمله‌های کمتری** دارد. یک‌های کم → SOP کوتاه‌تر؛ صفرهای کم → POS کوتاه‌تر. این انتخاب در فصل ۳ با نقشهٔ کارنو دقیق می‌شود: گروه‌بندی یک‌ها SOP می‌دهد و گروه‌بندی صفرها POS.

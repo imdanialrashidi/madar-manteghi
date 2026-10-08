@@ -1,0 +1,25 @@
+---
+type: example
+title: "مثال: از جدول به SOP و POS"
+problem: "تابع دو ورودی با خروجی ۰۱۱۰ (برای سطرهای ۰۰ تا ۱۱) را به هر دو فرم SOP و POS بنویسید."
+description: "مثال حل‌شدهٔ کامل چرخهٔ جدول به عبارت: استخراج مین‌ترم‌ها، ماکس‌ترم‌ها و هر دو نماد."
+section: chapter-2
+difficulty: beginner
+order: 2
+estimatedMinutes: 8
+tags: [SOP, POS, جدول درستی]
+formula: minterm-expansion
+---
+
+<WorkedExample
+  title="جدول ۰۱۱۰ به هر دو فرم"
+  problem="تابع دو ورودی F با خروجی سطرها (۰۰→۰، ۰۱→۱، ۱۰→۱، ۱۱→۰) را به فرم SOP و POS بنویسید."
+  difficulty="beginner"
+  steps={[
+    { title: 'گام ۱ — سطرهای یک', content: 'خروجی در سطرهای ۱ (۰۱) و ۲ (۱۰) یک است.', latex: "F = \\Sigma m(1,2)" },
+    { title: 'گام ۲ — مین‌ترم‌ها', content: "سطر ۰۱ می‌شود x'y و سطر ۱۰ می‌شود xy'. (متغیر اول را x و دوم را y بگیر.)", latex: "F = x'y + xy'" },
+    { title: 'گام ۳ — سطرهای صفر', content: 'خروجی در سطرهای ۰ (۰۰) و ۳ (۱۱) صفر است.', latex: "F = \\Pi M(0,3)" },
+    { title: 'گام ۴ — ماکس‌ترم‌ها', content: "سطر ۰۰ می‌شود (x+y) و سطر ۱۱ می‌شود (x'+y').", latex: "F = (x + y)(x' + y')" },
+    { title: 'گام ۵ — این تابع آشناست؟', content: 'خروجی وقتی ۱ است که ورودی‌ها فرق کنند — این همان XOR است. پس ثابت شد:', latex: "x \\oplus y = x'y + xy' = (x+y)(x'+y')" },
+  ]}
+/>

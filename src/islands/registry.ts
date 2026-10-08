@@ -1,10 +1,20 @@
-import type { ComponentType } from 'react';
-import Quiz from './common/Quiz';
-import SearchIsland from './common/SearchIsland';
-import StepReveal from './common/StepReveal';
-import ProgressToggle from './common/ProgressToggle';
-import CommandPalette from './common/CommandPalette';
-import ParamLab, { Slider, Toggle, Tabs, Reveal, LiveReadout, FunctionPlot } from './common/Controls';
+import type { ComponentType } from "react";
+import Quiz from "./common/Quiz";
+import SearchIsland from "./common/SearchIsland";
+import StepReveal from "./common/StepReveal";
+import ProgressToggle from "./common/ProgressToggle";
+import CommandPalette from "./common/CommandPalette";
+import ParamLab, {
+  Slider,
+  Toggle,
+  Tabs,
+  Reveal,
+  LiveReadout,
+  FunctionPlot,
+} from "./common/Controls";
+import BinaryPlayground from "./course/BinaryPlayground";
+import GatePlayground from "./course/GatePlayground";
+import KmapExplorer from "./course/KmapExplorer";
 
 /**
  * React island registry.
@@ -36,24 +46,90 @@ export interface IslandMeta {
 
 /** Islands available to every course. */
 const commonIslands: IslandMeta[] = [
-  { name: 'Quiz', reason: 'multi-step state + grading', component: Quiz as ComponentType<never> },
-  { name: 'SearchIsland', reason: 'query state over a client index', component: SearchIsland as ComponentType<never> },
-  { name: 'StepReveal', reason: 'progressive disclosure state', component: StepReveal as ComponentType<never> },
-  { name: 'ProgressToggle', reason: 'localStorage-backed state', component: ProgressToggle as ComponentType<never> },
-  { name: 'CommandPalette', reason: 'global shortcut + query state', component: CommandPalette as ComponentType<never> },
-  { name: 'ParamLab', reason: 'parameter + visualization state', component: ParamLab as ComponentType<never> },
-  { name: 'Slider', reason: 'parameter input state', component: Slider as unknown as ComponentType<never> },
-  { name: 'Toggle', reason: 'switch state', component: Toggle as unknown as ComponentType<never> },
-  { name: 'Tabs', reason: 'tab selection state', component: Tabs as unknown as ComponentType<never> },
-  { name: 'Reveal', reason: 'disclosure state', component: Reveal as unknown as ComponentType<never> },
-  { name: 'LiveReadout', reason: 'announced derived state', component: LiveReadout as unknown as ComponentType<never> },
-  { name: 'FunctionPlot', reason: 'parameter-driven visualization', component: FunctionPlot as unknown as ComponentType<never> },
+  {
+    name: "Quiz",
+    reason: "multi-step state + grading",
+    component: Quiz as ComponentType<never>,
+  },
+  {
+    name: "SearchIsland",
+    reason: "query state over a client index",
+    component: SearchIsland as ComponentType<never>,
+  },
+  {
+    name: "StepReveal",
+    reason: "progressive disclosure state",
+    component: StepReveal as ComponentType<never>,
+  },
+  {
+    name: "ProgressToggle",
+    reason: "localStorage-backed state",
+    component: ProgressToggle as ComponentType<never>,
+  },
+  {
+    name: "CommandPalette",
+    reason: "global shortcut + query state",
+    component: CommandPalette as ComponentType<never>,
+  },
+  {
+    name: "ParamLab",
+    reason: "parameter + visualization state",
+    component: ParamLab as ComponentType<never>,
+  },
+  {
+    name: "Slider",
+    reason: "parameter input state",
+    component: Slider as unknown as ComponentType<never>,
+  },
+  {
+    name: "Toggle",
+    reason: "switch state",
+    component: Toggle as unknown as ComponentType<never>,
+  },
+  {
+    name: "Tabs",
+    reason: "tab selection state",
+    component: Tabs as unknown as ComponentType<never>,
+  },
+  {
+    name: "Reveal",
+    reason: "disclosure state",
+    component: Reveal as unknown as ComponentType<never>,
+  },
+  {
+    name: "LiveReadout",
+    reason: "announced derived state",
+    component: LiveReadout as unknown as ComponentType<never>,
+  },
+  {
+    name: "FunctionPlot",
+    reason: "parameter-driven visualization",
+    component: FunctionPlot as unknown as ComponentType<never>,
+  },
 ];
 
 // Course-specific islands are appended by the course repository.
-// They are intentionally empty in the template.
+// Digital Logic ships three real playgrounds; each computes from
+// deterministic rules (integer arithmetic, gate functions, Quine–McCluskey).
+const courseIslands: IslandMeta[] = [
+  {
+    name: "BinaryPlayground",
+    reason: "numeric input + radix computation state",
+    component: BinaryPlayground as ComponentType<never>,
+  },
+  {
+    name: "GatePlayground",
+    reason: "gate selection + input toggle state",
+    component: GatePlayground as ComponentType<never>,
+  },
+  {
+    name: "KmapExplorer",
+    reason: "map editing + minimization state",
+    component: KmapExplorer as ComponentType<never>,
+  },
+];
 
-export const islands: IslandMeta[] = [...commonIslands];
+export const islands: IslandMeta[] = [...commonIslands, ...courseIslands];
 
 export function getIsland(name: string): IslandMeta | undefined {
   return islands.find((island) => island.name === name);

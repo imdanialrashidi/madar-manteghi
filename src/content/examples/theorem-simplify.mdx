@@ -1,0 +1,25 @@
+---
+type: example
+title: "مثال: ساده‌سازی با قضایا"
+problem: "عبارت x'y + xy' + xy را فقط با قضایای جبر بول ساده کنید."
+description: "مثال حل‌شدهٔ ساده‌سازی جبری: جذب، پوشش و رسیدن به XOR بدون نقشهٔ کارنو."
+section: chapter-2
+difficulty: intermediate
+order: 1
+estimatedMinutes: 8
+tags: [ساده‌سازی, قضایا]
+formula: boolean-identities
+---
+
+<WorkedExample
+  title="ساده‌سازی سه‌جمله‌ای"
+  problem="عبارت x'y + xy' + xy را ساده کنید."
+  difficulty="intermediate"
+  steps={[
+    { title: 'گام ۱ — دنبال الگوی پوشش بگرد', content: 'دو جملهٔ اول فقط در یک لیترال فرق دارند؟ نه. جملهٔ دوم و سوم چطور؟ xy و +xy فقط در y فرق دارند.', latex: "F = x'y + xy' + xy" },
+    { title: 'گام ۲ — پوشش روی دو جملهٔ آخر', content: 'از xy فاکتور بگیر.', latex: "xy' + xy = x(y' + y) = x" },
+    { title: 'گام ۳ — عبارت جدید', content: 'حالا عبارت شده دو جمله.', latex: "F = x'y + x" },
+    { title: 'گام ۴ — اتحاد حذف', content: 'این دقیقاً الگوی حذف است.', latex: "x'y + x = x + y" },
+    { title: 'گام ۵ — بررسی', content: 'جواب نهایی x + y است. راستی‌آزمایی با یک سطر: اگر x=۰ و y=۱، عبارت اول می‌شود ۱ و جواب هم ۱. (در واقع عبارت اول همان XOR به‌علاوهٔ xy بود، یعنی همان OR.)' },
+  ]}
+/>

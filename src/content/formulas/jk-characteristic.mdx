@@ -1,0 +1,30 @@
+---
+type: formula
+title: "معادلهٔ مشخصه JK"
+name: "مشخصهٔ JK (بدون ترکیب ممنوعه)"
+description: "معادلهٔ حالت بعدی فلیپ‌فلاپ JK و رفتار تاگل در ورودی ۱۱."
+section: chapter-5
+difficulty: intermediate
+order: 2
+estimatedMinutes: 4
+tags: [فلیپ‌فلاپ, JK]
+latex: "Q(t+1) = JQ' + K'Q"
+---
+
+## مشخصهٔ JK چه می‌گوید؟
+
+<Formula
+  id="jk-characteristic"
+  latex={"Q(t+1) = JQ' + K'Q"}
+  caption="حالت بعدی JK: هیچ ترکیب ممنوعه‌ای ندارد"
+/>
+
+<FormulaBreakdown
+  title="خواندن چهار حالت"
+  terms={[
+    { term: "J=0, K=0", label: "نگه‌دار", detail: "فرمول می‌شود Q؛ حالت عوض نمی‌شود" },
+    { term: "J=1, K=0", label: "ست", detail: "فرمول می‌شود ۱" },
+    { term: "J=0, K=1", label: "ریست", detail: "فرمول می‌شود ۰" },
+    { term: "J=1, K=1", label: "تاگل", detail: "فرمول می‌شود نقیض Q؛ تفاوت اصلی با SR همین‌جاست" },
+  ]}
+/>

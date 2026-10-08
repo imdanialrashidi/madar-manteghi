@@ -1,0 +1,35 @@
+---
+type: formula
+title: "بسط ماکس‌ترمی"
+name: "بسط استاندارد POS (پی M)"
+description: "هر تابع برابر ضرب ماکس‌ترم‌های سطرهای صفر آن است؛ با نماد پی و مثال."
+section: chapter-2
+difficulty: beginner
+order: 4
+estimatedMinutes: 4
+tags: [ماکس‌ترم, POS, Maxterm]
+latex: "F(x_1, \\ldots, x_n) = \\Pi M(\\text{row numbers with output } 0)"
+concepts: [maxterm, sop-pos]
+---
+
+## بسط ماکس‌ترمی چه می‌گوید؟
+
+<Formula
+  id="maxterm-expansion"
+  latex={"F(x_1, \\ldots, x_n) = \\Pi M(\\text{row numbers with output } 0)"}
+  caption="هر تابع، ضرب ماکس‌ترم‌های سطرهایِ صفر آن است"
+/>
+
+مثال: همان تابع <Formula inline latex={"F = \\Sigma m(1,5)"} /> از نگاه صفرها:
+
+<Formula
+  id="maxterm-expansion-example"
+  latex={"F = \\Pi M(0,2,3,4,6,7)"}
+  caption="همان تابع با نماد پی: فهرست، مکمل فهرست سیگماست"
+/>
+
+برای ساختن عبارت از روی پی، شمارهٔ هر سطر را به دودویی ببر و این‌بار برعکس بچین: ۱ نقیضش، ۰ خودش. مثلاً <Formula inline latex={"M_0 = (x + y + z)"} /> و <Formula inline latex={"M_7 = (x' + y' + z')"} />.
+
+<Callout type="note" title="رابطهٔ سیگما و پی">
+  برای تابع <Formula inline latex={"n"} /> متغیره، اجتماع فهرست سیگما و فهرست پی همیشه همهٔ شماره‌های صفر تا <Formula inline latex={"2^n - 1"} /> است. اگر یکی را داشته باشی، دیگری را داری.
+</Callout>

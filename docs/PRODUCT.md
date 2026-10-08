@@ -80,7 +80,10 @@ through the math helper is HTML-escaped. `tests/unit/math.test.ts` pins this.
 - **Core page target:** static HTML; LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1
   (Core Web Vitals, p75) once field data exists.
 - **Lab budget:** first-party JS ≤ 120 KB gzip, CSS ≤ 90 KB gzip, any single
-  page ≤ 200 KB HTML, zero KaTeX runtime. Enforced by
+  page ≤ 260 KB HTML (recalibrated 2026-10-08 from 200 KB: the old figure was
+  measured on the 11-entry sample; a complete 119-entry course carries the
+  designed full-course contents rails on every page — worst page gzips to
+  ~31 KB), zero KaTeX runtime. Enforced by
   `scripts/check-budgets.mjs`. Measured: 56 KB JS, 15 KB CSS.
 - **Supported device baseline:** evergreen browsers; touch and keyboard.
 - **Accessibility target:** WCAG 2.2 AA. Every semantic colour pair has a

@@ -1,0 +1,24 @@
+---
+type: example
+title: "مثال: پیاده‌سازی با NAND"
+problem: "تابع F = xy + z را فقط با گیت‌های NAND دو ورودی پیاده کنید."
+description: "مثال حل‌شده از تبدیل SOP به فرم NAND/NAND با دمورگان مضاعف."
+section: chapter-2
+difficulty: intermediate
+order: 3
+estimatedMinutes: 8
+tags: [NAND, پیاده‌سازی]
+formula: demorgan
+---
+
+<WorkedExample
+  title="فقط با NAND بساز"
+  problem="تابع F = xy + z را فقط با گیت‌های NAND دو ورودی پیاده کنید."
+  difficulty="intermediate"
+  steps={[
+    { title: 'گام ۱ — دو بار نقیض بگیر', content: 'دو نقیض پشت سر هم چیزی را عوض نمی‌کند؛ پس دور کل تابع دو حباب بگذار.', latex: "F = ((xy + z)')'" },
+    { title: 'گام ۲ — نقیض بیرونی یعنی NAND نهایی', content: 'حباب بیرونی را نگه دار و نقیض درونی را با دمورگان بشکن.', latex: "F = ((xy)' \\cdot z')'" },
+    { title: 'گام ۳ — بخوان', content: 'حالا سه NAND داری: یکی برای (xy)‍′، یکی برای z‍′ (تک‌ورودی)، و یکی نهایی که خروجی آن دو را ترکیب می‌کند.', latex: "F = \\text{NAND}(\\text{NAND}(x,y), \\text{NAND}(z,z))" },
+    { title: 'گام ۴ — قاعدهٔ کلی', content: 'هر SOP را می‌شود با همین روش به دو سطح NAND تبدیل کرد: سطح اول NANDِ هر جملهٔ ضرب، سطح دوم NANDِ ترکیب آن‌ها. تک‌لیترال‌ها با NAND تک‌ورودی (همان NOT) ساخته می‌شوند.' },
+  ]}
+/>

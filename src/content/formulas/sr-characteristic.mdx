@@ -1,0 +1,30 @@
+---
+type: formula
+title: "معادلهٔ مشخصه SR"
+name: "مشخصهٔ SR (با شرط اعتبار)"
+description: "معادلهٔ حالت بعدی فلیپ‌فلاپ SR و شرط ممنوعه بودن ترکیب ۱۱."
+section: chapter-5
+difficulty: intermediate
+order: 1
+estimatedMinutes: 4
+tags: [فلیپ‌فلاپ, SR]
+latex: "Q(t+1) = S + R'Q, \\qquad SR = 0"
+---
+
+## مشخصهٔ SR چه می‌گوید؟
+
+<Formula
+  id="sr-characteristic"
+  latex={"Q(t+1) = S + R'Q, \\qquad SR = 0"}
+  caption="حالت بعدی SR و شرط اعتبار ورودی‌ها"
+/>
+
+<FormulaBreakdown
+  title="اجزای فرمول"
+  terms={[
+    { term: "Q(t+1)", label: "حالت بعدی", detail: "مقداری که بعد از لبهٔ کلاک در خروجی می‌نشیند" },
+    { term: "S", label: "ست", detail: "اگر ۱ باشد حالت بعدی ۱ است، هر چه Q بوده" },
+    { term: "R'Q", label: "نگه‌دار مشروط", detail: "فقط وقتی اثر می‌کند که R صفر باشد؛ یعنی ریست نشده باشیم" },
+    { term: "SR = 0", label: "شرط اعتبار", detail: "ترکیب ۱۱ ممنوع است؛ طراح باید تضمینش کند" },
+  ]}
+/>

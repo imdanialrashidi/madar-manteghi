@@ -1,0 +1,88 @@
+---
+type: question
+title: "خودآزمایی بلوک‌های حسابی"
+description: "شش پرسش از نیم‌جمع‌کننده و تمام‌جمع‌کننده، نقلی، جمع/تفریق‌کننده و اصلاح BCD."
+section: chapter-4
+difficulty: intermediate
+order: 1
+estimatedMinutes: 10
+points: 6
+instructions: "اول جدول بکش و بعد بررسی کن. توضیح هر پاسخ غلط، قانون مربوط را یادآوری می‌کند."
+tags: [تمرین, جمع‌کننده]
+prerequisites: [adders]
+---
+
+<Quiz
+  id="quiz-arithmetic-blocks"
+  title="جمع‌کننده‌ها را بلدی؟"
+  description="شش پرسش از درس «جمع‌کننده‌ها و مدارهای حسابی»."
+  questions={[
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      text: 'خروجی جمع (S) نیم‌جمع‌کننده کدام است؟',
+      options: [
+        { id: 'a', text: 'x ⊕ y' },
+        { id: 'b', text: 'xy' },
+        { id: 'c', text: 'x + y' },
+      ],
+      correctAnswer: 'a',
+      explanation: 'جمع، XOR است (سطرهای ۰۱ و ۱۰) و نقلی، AND است (سطر ۱۱).'
+    },
+    {
+      id: 'q2',
+      type: 'multiple-choice',
+      text: 'نقلی تمام‌جمع‌کننده در کدام سطرها ۱ است؟',
+      options: [
+        { id: 'a', text: 'سطرهایی که تعداد یک‌ها فرد است' },
+        { id: 'b', text: 'سطرهایی که دست‌کم دو ورودی ۱ دارند' },
+        { id: 'c', text: 'فقط سطر ۱۱۱' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'نقلی قانون اکثریت دارد: سطرهای ۳، ۵، ۶ و ۷. (گزینهٔ اول قانون ستون جمع است.)'
+    },
+    {
+      id: 'q3',
+      type: 'true-false',
+      text: 'در جمع‌کننده/تفریق‌کننده، وقتی حالت تفریق است نقلی ورودی مرحلهٔ اول ۱ گذاشته می‌شود.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'true',
+      explanation: 'همان ۱ِ اضافهٔ «معکوس کن و یکی اضافه کن» در مکمل دو است؛ این‌بار در سخت‌افزار.'
+    },
+    {
+      id: 'q4',
+      type: 'multiple-choice',
+      text: 'در جمع BCD، اصلاح ۶+ چه وقتی انجام می‌شود؟',
+      options: [
+        { id: 'a', text: 'همیشه' },
+        { id: 'b', text: 'وقتی نقلی آمده یا جمع از ۹ گذشته باشد' },
+        { id: 'c', text: 'وقتی جمع زوج باشد' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'شرط اصلاح دقیقاً همین است: نقلی یا بزرگ‌تر بودن از ۹.'
+    },
+    {
+      id: 'q5',
+      type: 'numeric',
+      text: 'ضرب‌کنندهٔ ۲×۲ حداکثر چند بیت خروجی دارد؟ (فقط عدد)',
+      numericAnswer: 4,
+      tolerance: 0,
+      explanation: 'بزرگ‌ترین حالت ۱۱×۱۱ (۳×۳=۹) است که ۴ بیت (۱۰۰۱) می‌خواهد.'
+    },
+    {
+      id: 'q6',
+      type: 'multiple-choice',
+      text: 'تفاوت نیم‌جمع‌کننده و تمام‌جمع‌کننده در چیست؟',
+      options: [
+        { id: 'a', text: 'تمام‌جمع‌کننده نقلی ورودی هم دارد' },
+        { id: 'b', text: 'نیم‌جمع‌کننده نقلی ندارد' },
+        { id: 'c', text: 'فرقی ندارند' },
+      ],
+      correctAnswer: 'a',
+      explanation: 'هر دو نقلی خروجی دارند؛ تفاوت در نقلی ورودی مرحلهٔ قبل است که فقط تمام‌جمع‌کننده می‌پذیرد.'
+    },
+  ]}
+/>

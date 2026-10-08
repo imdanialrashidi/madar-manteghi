@@ -1,0 +1,91 @@
+---
+type: question
+title: "خودآزمایی دیکودر و مالتی‌پلکسر"
+description: "شش پرسش از رفتار دیکودر، انکودر اولویت‌دار، فرمول MUX، پیاده‌سازی با MUX و مقایسه‌گر."
+section: chapter-4
+difficulty: intermediate
+order: 2
+estimatedMinutes: 10
+points: 6
+instructions: "اول خودت پیش‌بینی کن، بعد بررسی کن. توضیح هر پاسخ غلط، قانون مربوط را یادآوری می‌کند."
+tags: [تمرین, دیکودر, مالتی‌پلکسر]
+prerequisites: [decoders-encoders]
+---
+
+<Quiz
+  id="quiz-decoders-mux"
+  title="دیکودر و MUX را بلدی؟"
+  description="شش پرسش از درس‌های «دیکودر و انکودر» و «مالتی‌پلکسر و مقایسه‌گر»."
+  questions={[
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      text: 'در دیکودر ۲ به ۴ با ورودی ۱۰، کدام خروجی ۱ است؟',
+      options: [
+        { id: 'a', text: 'خروجی شمارهٔ ۱' },
+        { id: 'b', text: 'خروجی شمارهٔ ۲' },
+        { id: 'c', text: 'همهٔ خروجی‌ها' },
+      ],
+      correctAnswer: 'b',
+      explanation: '۱۰ دودویی یعنی ۲ دهدهی؛ فقط خروجی هم‌شماره فعال می‌شود.'
+    },
+    {
+      id: 'q2',
+      type: 'true-false',
+      text: 'هر خروجی دیکودر دقیقاً یک مین‌ترمِ ورودی‌هاست.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'true',
+      explanation: 'به همین دلیل است که دیکودر + یک OR می‌تواند هر تابعی را بسازد.'
+    },
+    {
+      id: 'q3',
+      type: 'multiple-choice',
+      text: 'چرا انکودر اولویت‌دار ساخته شد؟',
+      options: [
+        { id: 'a', text: 'چون انکودر ساده با ورودی نامعتبر (هیچ یا چند فعال) خروجی غلط می‌دهد' },
+        { id: 'b', text: 'چون انکودر ساده کند است' },
+        { id: 'c', text: 'چون انکودر ساده بیت بیشتری مصرف می‌کند' },
+      ],
+      correctAnswer: 'a',
+      explanation: 'اولویت، قانون انتخاب در ورودی نامعتبر است؛ مسئله سرعت یا تعداد بیت نیست.'
+    },
+    {
+      id: 'q4',
+      type: 'multiple-choice',
+      text: 'خروجی MUX دوتایی با انتخاب S=۱ کدام است؟',
+      options: [
+        { id: 'a', text: 'ورودی صفرم' },
+        { id: 'b', text: 'ورودی یکم' },
+        { id: 'c', text: 'جمع دو ورودی' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'فرمول Y = S′I₀ + SI₁: وقتی S=۱ جملهٔ دوم زنده می‌ماند.'
+    },
+    {
+      id: 'q5',
+      type: 'multiple-choice',
+      text: 'مقایسهٔ دو عدد چندبیتی از کدام سمت شروع می‌شود؟',
+      options: [
+        { id: 'a', text: 'از کم‌ارزش‌ترین بیت' },
+        { id: 'b', text: 'از پرارزش‌ترین بیت' },
+        { id: 'c', text: 'از وسط' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'اولین اختلاف از سمت چپ، برنده را مشخص می‌کند چون وزنش از جمع بقیه بیشتر است.'
+    },
+    {
+      id: 'q6',
+      type: 'true-false',
+      text: 'برای مقایسهٔ دو عدد حتماً باید آن‌ها را از هم کم کرد.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'false',
+      explanation: 'مقایسه‌گر مستقیم بدون تفریق کار می‌کند؛ تفریق فقط وقتی لازم است که مقدار اختلاف هم بخواهی.'
+    },
+  ]}
+/>

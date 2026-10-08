@@ -1,0 +1,30 @@
+---
+type: formula
+title: "اتحادهای XOR و XNOR"
+name: "اتحادهای XOR و XNOR"
+description: "تعریف جبری XOR و XNOR و خاصیت‌های عبور و نقیض کنترل‌شده که در جمع‌کننده و مقایسه‌گر به کار می‌روند."
+section: chapter-3
+difficulty: intermediate
+order: 2
+estimatedMinutes: 4
+tags: [XOR, XNOR]
+latex: "x \\oplus y = x'y + xy', \\qquad (x \\oplus y)' = x \\odot y = xy + x'y'"
+---
+
+## اتحادهای XOR چه می‌گویند؟
+
+<Formula
+  id="xor-identities"
+  latex={"x \\oplus y = x'y + xy', \\qquad (x \\oplus y)' = x \\odot y = xy + x'y'"}
+  caption="تعریف جبری XOR و XNOR (نماد XNOR همان دایره‌دور-جمع است)"
+/>
+
+<FormulaBreakdown
+  title="خاصیت‌های کاربردی"
+  terms={[
+    { term: "x \\oplus 0 = x", label: "عبور", detail: "XOR با صفر، سیگنال را دست‌نخورده رد می‌کند" },
+    { term: "x \\oplus 1 = x'", label: "نقیض کنترل‌شده", detail: "XOR با یک، سیگنال را وارونه می‌کند — کلید تفریق‌کنندهٔ فصل ۴" },
+    { term: "x \\oplus x = 0", label: "خودحذفی", detail: "XOR هر چیز با خودش صفر است؛ پایهٔ آشکارسازی اختلاف" },
+    { term: "x \\odot y", label: "XNOR", detail: "یک است وقتی ورودی‌ها برابر باشند — آشکارساز برابری" },
+  ]}
+/>

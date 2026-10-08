@@ -1,0 +1,39 @@
+---
+type: formula
+title: "تبدیل دهدهی به دودویی"
+name: "تقسیم‌های پیاپی بر ۲ (دهدهی به دودویی)"
+description: "روش تقسیم‌های پیاپی: باقی‌مانده‌ها را از آخر به اول بخوان تا معادل دودویی به دست آید."
+section: chapter-1
+difficulty: beginner
+order: 2
+estimatedMinutes: 4
+tags: [تبدیل مبنا, دودویی]
+latex: "N \\to \\left\\lfloor \\frac{N}{2} \\right\\rfloor, \\quad b_0, b_1, \\ldots = \\text{remainders read last-to-first}"
+concepts: [number-base]
+conditions:
+  - "برای قسمت صحیح عدد به کار می‌رود."
+  - "برای قسمت کسری به‌جای تقسیم، ضرب‌های پیاپی در ۲ انجام می‌شود."
+---
+
+## تبدیل دهدهی به دودویی چه می‌گوید؟
+
+عدد را آن‌قدر بر ۲ تقسیم کن تا خارج‌قسمت صفر شود؛ باقی‌مانده‌ها (از **آخر به اول**) بیت‌های معادل دودویی‌اند:
+
+<Formula
+  id="decimal-to-binary"
+  latex={"N \\to \\left\\lfloor \\frac{N}{2} \\right\\rfloor, \\quad \\text{read remainders last-to-first}"}
+  caption="تقسیم‌های پیاپی بر ۲"
+/>
+
+<FormulaBreakdown
+  title="اجزای روش"
+  terms={[
+    { term: "N", label: "عدد دهدهی", detail: "هر بار خارج‌قسمت جای آن می‌نشیند" },
+    { term: "\\left\\lfloor \\frac{N}{2} \\right\\rfloor", label: "خارج‌قسمت صحیح", detail: "تقسیم بر ۲ و انداختن کسر" },
+    { term: "\\text{remainder}", label: "باقی‌مانده", detail: "فقط صفر یا یک؛ اولین باقی‌مانده کم‌ارزش‌ترین بیت است" },
+  ]}
+/>
+
+<Callout type="warning" title="جهت خواندن">
+  اولین باقی‌مانده، بیت سمت راست (LSB) است. اگر از اول بخوانی، عدد برعکس می‌شود. همیشه از **آخرین** تقسیم شروع به خواندن کن.
+</Callout>

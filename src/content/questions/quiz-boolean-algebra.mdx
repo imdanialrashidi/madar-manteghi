@@ -1,0 +1,80 @@
+---
+type: question
+title: "خودآزمایی جبر بول"
+description: "پنج پرسش از اصول بدیهی، جذب و حذف، دمورگان و دوگان؛ با توضیح هر پاسخ غلط."
+section: chapter-2
+difficulty: intermediate
+order: 1
+estimatedMinutes: 10
+points: 5
+instructions: "اول خودت ساده کن، بعد بررسی کن. توضیح هر پاسخ، قانون مربوط را یادآوری می‌کند."
+tags: [تمرین, جبر بول]
+prerequisites: [boolean-algebra]
+---
+
+<Quiz
+  id="quiz-boolean-algebra"
+  title="قضیه‌ها را بلدی؟"
+  description="پنج پرسش از درس «جبر بول»."
+  questions={[
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      text: 'حاصل x + ۱ در جبر بول چیست؟',
+      options: [
+        { id: 'a', text: '۱' },
+        { id: 'b', text: 'x' },
+        { id: 'c', text: '۰' },
+      ],
+      correctAnswer: 'a',
+      explanation: '۱ عضو جاذب جمع است: هر چیزی با ۱ جمع شود ۱ می‌شود. (در جبر معمولی ۱+۱ می‌شود ۲، ولی اینجا جمع یعنی «یا».)'
+    },
+    {
+      id: 'q2',
+      type: 'multiple-choice',
+      text: 'کدام گزینه معادل x + x′y است؟',
+      options: [
+        { id: 'a', text: 'x + y' },
+        { id: 'b', text: 'y' },
+        { id: 'c', text: '۱' },
+      ],
+      correctAnswer: 'a',
+      explanation: 'اتحاد حذف: نقیض اضافه از داخل جمله می‌افتد و می‌ماند x + y.'
+    },
+    {
+      id: 'q3',
+      type: 'multiple-choice',
+      text: 'نقیض (A + B) کدام است؟',
+      options: [
+        { id: 'a', text: 'A′ + B′' },
+        { id: 'b', text: 'A′ · B′' },
+        { id: 'c', text: 'A · B' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'دمورگان: نقیضِ جمع می‌شود ضربِ نقیض‌ها. عملگر هم عوض می‌شود.'
+    },
+    {
+      id: 'q4',
+      type: 'true-false',
+      text: 'توزیع جمع روی ضرب، یعنی x + yz = (x+y)(x+z)، در جبر بول درست است.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'true',
+      explanation: 'این توزیع دوم مخصوص جبر بول است و در جبر معمولی برقرار نیست. با جدول درستی راستی‌آزمایی‌اش کن.'
+    },
+    {
+      id: 'q5',
+      type: 'multiple-choice',
+      text: 'دوگان عبارت x · ۱ کدام است؟',
+      options: [
+        { id: 'a', text: 'x + ۰' },
+        { id: 'b', text: 'x + ۱' },
+        { id: 'c', text: 'x′ + ۱' },
+      ],
+      correctAnswer: 'a',
+      explanation: 'در دوگان، ضرب با جمع و ۱ با ۰ جابه‌جا می‌شود؛ متغیرها دست نمی‌خورند.'
+    },
+  ]}
+/>

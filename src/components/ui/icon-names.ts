@@ -8,6 +8,7 @@ export type IconName =
   | 'search'
   | 'book'
   | 'formula'
+  | 'gate'
   | 'beaker'
   | 'question'
   | 'glossary'

@@ -1,0 +1,24 @@
+---
+type: concept
+title: "ماکس‌ترم"
+short: "جمع همهٔ متغیرها که دقیقاً در یک سطر جدول ۰ می‌شود؛ آجر سازندهٔ فرم POS."
+description: "ماکس‌ترم چیست، قانون نقیض برعکس آن نسبت به مین‌ترم، شماره‌گذاری و نقشش در فرم POS."
+section: chapter-2
+difficulty: beginner
+order: 2
+estimatedMinutes: 5
+tags: [ماکس‌ترم, Maxterm, POS]
+formulas: [maxterm-expansion]
+---
+
+<Definition term="ماکس‌ترم (Maxterm)" id="maxterm-concept-def">
+  حاصل‌جمع OR همهٔ متغیرهای تابع، به‌طوری‌که هر متغیرِ ۱ نقیضش و هر متغیرِ ۰ خودش بیاید. ماکس‌ترم شمارهٔ <Formula inline latex={"i"} /> (با نماد <Formula inline latex={"M_i"} />) دقیقاً و فقط در سطر شمارهٔ <Formula inline latex={"i"} /> جدول، مقدار ۰ دارد.
+</Definition>
+
+جمع OR فقط وقتی ۰ است که **همه** جمله‌ها ۰ باشند؛ و جمله‌ها طوری چیده شده‌اند که فقط در همان یک سطر همه صفر شوند.
+
+مثال سه‌متغیره: سطر ۱۰۱ (شمارهٔ ۵) ماکس‌ترمش <Formula inline latex={"M_5 = (x' + y + z')"} /> است. با مین‌ترم همان سطر (<Formula inline latex={"xy'z"} />) مقایسه‌اش کن: هم علامت عوض شده (ضرب به جمع) و هم هر لیترال نقیض شده است.
+
+<Callout type="tip" title="فرمول حفظی">
+  ماکس‌ترم «برعکسش»: ۱ نقیض می‌آید، ۰ خودش. دقیقاً وارونهٔ قانون مین‌ترم.
+</Callout>

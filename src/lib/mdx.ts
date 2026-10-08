@@ -10,19 +10,22 @@
  * from `src/islands/` would look right but never respond to clicks. The wrapper
  * is what carries the `client:*` directive.
  */
-import Callout from '../components/educational/Callout.astro';
-import Confused from '../components/educational/Confused.astro';
-import Definition from '../components/educational/Definition.astro';
-import Misconception from '../components/educational/Misconception.astro';
-import Formula from '../components/educational/Formula.astro';
-import FormulaBreakdown from '../components/educational/FormulaBreakdown.astro';
-import InteractiveFigure from '../components/educational/InteractiveFigure.astro';
-import WorkedExample from '../components/educational/WorkedExample.astro';
-import Prerequisite from '../components/educational/Prerequisite.astro';
-import GlossaryTerm from '../components/educational/GlossaryTerm.astro';
-import Quiz from '../components/educational/Quiz.astro';
-import StepReveal from '../components/educational/StepReveal.astro';
-import ParamLab from '../components/educational/ParamLab.astro';
+import Callout from "../components/educational/Callout.astro";
+import Confused from "../components/educational/Confused.astro";
+import Definition from "../components/educational/Definition.astro";
+import Misconception from "../components/educational/Misconception.astro";
+import Formula from "../components/educational/Formula.astro";
+import FormulaBreakdown from "../components/educational/FormulaBreakdown.astro";
+import InteractiveFigure from "../components/educational/InteractiveFigure.astro";
+import WorkedExample from "../components/educational/WorkedExample.astro";
+import Prerequisite from "../components/educational/Prerequisite.astro";
+import GlossaryTerm from "../components/educational/GlossaryTerm.astro";
+import Quiz from "../components/educational/Quiz.astro";
+import StepReveal from "../components/educational/StepReveal.astro";
+import ParamLab from "../components/educational/ParamLab.astro";
+import BinaryPlayground from "../components/educational/BinaryPlayground.astro";
+import GatePlayground from "../components/educational/GatePlayground.astro";
+import KmapExplorer from "../components/educational/KmapExplorer.astro";
 
 export const mdxComponents = {
   Callout,
@@ -38,4 +41,7 @@ export const mdxComponents = {
   StepReveal,
   ParamLab,
   Quiz,
+  BinaryPlayground,
+  GatePlayground,
+  KmapExplorer,
 };

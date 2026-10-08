@@ -1,0 +1,61 @@
+---
+type: lesson
+title: "جبر بول: قوانین بازی صفر و یک"
+description: "تعریف بدیهی جبر بول، عملگرهای NOT و AND و OR و قضایای مهم با کاربرد هر کدام؛ نه فهرست حفظی."
+section: chapter-2
+difficulty: intermediate
+order: 1
+estimatedMinutes: 20
+objective: "بتوانی قضایای جبر بول را با دلیل به کار ببری و یک عبارت ساده را قدم‌به‌قدم ساده کنی."
+tags: [جبر بول, قضایا, دمورگان]
+prerequisites: [proposition]
+concepts: [sop-pos]
+formulas: [demorgan, boolean-identities]
+---
+
+## جبر بول چیست؟
+
+<Definition term="جبر بول (Boolean Algebra)" id="boolean-algebra-def">
+  دستگاهی ریاضی روی مجموعهٔ دو عضوی <Formula inline latex={"\\{0, 1\\}"} /> با سه عملگر <Formula inline latex={"NOT"} /> (نقیض)، <Formula inline latex={"AND"} /> (ضرب، با نقطه یا کنار هم نوشتن) و <Formula inline latex={"OR"} /> (جمع، با علامت +).
+</Definition>
+
+چند قرارداد نمادی که باید روان شوی: <Formula inline latex={"A'"} /> یا <Formula inline latex={"\\bar{A}"} /> یعنی NOTِ A؛ <Formula inline latex={"A \\cdot B"} /> یا <Formula inline latex={"AB"} /> یعنی A AND B؛ و <Formula inline latex={"A + B"} /> یعنی A OR B. دقت کن + اینجا «یا»ست، نه جمع حسابی: <Formula inline latex={"1 + 1 = 1"} />.
+
+## اصول بدیهی: نقطهٔ شروع
+
+کل جبر بول از چند اصل ساده ساخته می‌شود (برای هر متغیر <Formula inline latex={"x"} />):
+
+- <Formula inline latex={"x + 0 = x"} /> و <Formula inline latex={"x \\cdot 1 = x"} /> — عضو خنثی.
+- <Formula inline latex={"x + 1 = 1"} /> و <Formula inline latex={"x \\cdot 0 = 0"} /> — عضو جاذب.
+- <Formula inline latex={"x + x' = 1"} /> و <Formula inline latex={"x \\cdot x' = 0"} /> — مکمل.
+
+بقیهٔ قضایا از همین‌ها اثبات می‌شوند. لازم نیست اثبات‌ها را حفظ کنی؛ ولی بدان که هیچ قانونی از آسمان نیامده است.
+
+## قضایایی که واقعاً به کارت می‌آیند
+
+<Prerequisite ids={["boolean-identities"]} />
+
+هر قانون را با «کی به درد می‌خورد» یاد بگیر:
+
+- **جذب:** <Formula inline latex={"x + xy = x"} /> — وقتی جمله‌ای، جملهٔ دیگر را قورت می‌دهد؛ در ساده‌سازی پرکاربردترین است.
+- **حذف:** <Formula inline latex={"x + x'y = x + y"} /> — جملهٔ اضافه را از داخل پرانتز بیرون می‌کشد.
+- **دمورگان:** نقیضِ جمع می‌شود ضربِ نقیض‌ها و برعکس. پل تبدیل میان AND و OR است و در پیاده‌سازی با NAND/NOR حیاتی می‌شود.
+- **توزیع‌پذیری دوطرفه:** هم AND روی OR توزیع می‌شود (<Formula inline latex={"x(y+z) = xy + xz"} />) و هم OR روی AND (<Formula inline latex={"x + yz = (x+y)(x+z)"} />). دومی در جبر معمولی نیست و مخصوص بول است!
+
+<Callout type="tip" title="روش فکر کردن">
+  قضیه‌ها را مثل ابزار ببین، نه مثل شعر. وقتی عبارتی داری، بپرس: «کدام جمله اضافی است؟» (جذب)، «کدام نقیض را می‌شود شکست؟» (دمورگان)، «از چه فاکتور بگیرم؟» (توزیع). یک <a href="/examples/theorem-simplify">مثال ساده‌سازی</a> این طرز فکر را نشان می‌دهد.
+</Callout>
+
+## اصل دوگانگی: دو قانون بخر، یکی ببر
+
+<Definition term="دوگان (Dual)" id="dual-def">
+  دوگان یک عبارت با جابه‌جایی AND با OR و ۰ با ۱ به دست می‌آید. اگر قضیه‌ای درست باشد، دوگانش هم درست است.
+</Definition>
+
+یعنی لازم نیست هر قانون را جداگانه حفظ کنی: <Formula inline latex={"x + 0 = x"} /> و <Formula inline latex={"x \\cdot 1 = x"} /> دو روی یک سکه‌اند. این اصل در فصل ۳ دوباره برمی‌گردد: هر روشی برای ساده‌سازی SOP، آینه‌ای برای POS دارد.
+
+<Misconception wrong="قوانین جبر معمولی (مثل انتقال به طرف دیگر تساوی) در جبر بول هم کار می‌کنند." correct="در جبر بول تفریق و تقسیم نداریم و «کم‌کردن از دو طرف» معنایی ندارد. فقط قضایای همین دستگاه (جذب، دمورگان، توزیع و ...) مجازند." />
+
+<Confused prerequisites={["demorgan"]} retry="قانون دمورگان را روی دو متغیر با جدول درستی خودت راستی‌آزمایی کن">
+  اگر قضیه‌ها شبیه فهرست حفظی شده‌اند، فقط روی دمورگان تمرکز کن: نقیضِ (A یا B) یعنی «نه A و نه B». این یکی را که با شهود بفهمی، بقیه با تمرین جا می‌افتند.
+</Confused>

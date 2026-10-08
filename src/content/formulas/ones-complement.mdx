@@ -1,0 +1,27 @@
+---
+type: formula
+title: "مکمل یک"
+name: "مکمل یک (One's Complement)"
+description: "قانون معکوس‌کردن بیت‌ها برای مکمل یک، همراه خاصیت جمع صفرشونده."
+section: chapter-1
+difficulty: beginner
+order: 3
+estimatedMinutes: 3
+tags: [مکمل, Complement]
+latex: "\\text{1's complement of } N = (2^n - 1) - N = \\text{bitwise NOT of } N"
+concepts: [radix-complement]
+conditions:
+  - "روی رشتهٔ n بیتی تعریف می‌شود؛ تعداد بیت‌ها باید مشخص باشد."
+---
+
+## مکمل یک چه می‌گوید؟
+
+مکمل یک یک رشتهٔ <Formula inline latex={"n"} /> بیتی، معکوس تک‌تک بیت‌های آن است:
+
+<Formula
+  id="ones-complement"
+  latex={"\\text{1's complement of } N = (2^n - 1) - N"}
+  caption="مکمل یک: تفریق از بزرگ‌ترین عدد n بیتی، یعنی معکوس بیت‌ها"
+/>
+
+چون <Formula inline latex={"2^n - 1"} /> در دودویی یعنی <Formula inline latex={"n"} /> تا ۱ پشت سر هم (مثلاً ۱۱۱۱)، تفریق از آن دقیقاً همان معکوس‌کردن بیت‌هاست. و چون <Formula inline latex={"N + ((2^n-1) - N) = 2^n - 1"} />، جمع عدد با مکمل یکش همیشه رشته‌ای از ۱هاست — همان خاصیتی که مکمل را برای تفریق به درد می‌خورد.

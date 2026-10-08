@@ -1,0 +1,31 @@
+---
+type: formula
+title: "بسط مین‌ترمی"
+name: "بسط استاندارد SOP (سیگما m)"
+description: "هر تابع برابر جمع مین‌ترم‌های سطرهای یک آن است؛ با نماد سیگما و مثال سه‌متغیره."
+section: chapter-2
+difficulty: beginner
+order: 3
+estimatedMinutes: 4
+tags: [مین‌ترم, SOP, Minterm]
+latex: "F(x_1, \\ldots, x_n) = \\Sigma m(\\text{row numbers with output } 1)"
+concepts: [minterm, sop-pos]
+---
+
+## بسط مین‌ترمی چه می‌گوید؟
+
+<Formula
+  id="minterm-expansion"
+  latex={"F(x_1, \\ldots, x_n) = \\Sigma m(\\text{row numbers with output } 1)"}
+  caption="هر تابع، جمع مین‌ترم‌های سطرهایِ یک آن است"
+/>
+
+مثال: تابعی سه‌متغیره که فقط در سطرهای ۱ (۰۰۱) و ۵ (۱۰۱) یک است:
+
+<Formula
+  id="minterm-expansion-example"
+  latex={"F = \\Sigma m(1,5) = x'y'z + xy'z"}
+  caption="نوشتن عبارت از روی نماد سیگما"
+/>
+
+برای ساختن عبارت از روی سیگما، شمارهٔ هر سطر را به دودویی ببر (با همان تعداد بیت) و لیترال‌ها را بچین: ۱ خودش، ۰ نقیضش. این تنها فرمولی است که برای رفتن از جدول به عبارت لازم داری.

@@ -1,0 +1,91 @@
+---
+type: question
+title: "خودآزمایی فرم‌ها و گیت‌ها"
+description: "شش پرسش از مین‌ترم و ماکس‌ترم، SOP و POS، جدول هفت گیت و گیت جامع."
+section: chapter-2
+difficulty: intermediate
+order: 2
+estimatedMinutes: 10
+points: 6
+instructions: "اول خودت جدول بکش، بعد بررسی کن. توضیح هر پاسخ غلط، قانون مربوط را یادآوری می‌کند."
+tags: [تمرین, مین‌ترم, گیت]
+prerequisites: [canonical-forms]
+---
+
+<Quiz
+  id="quiz-forms-gates"
+  title="فرم و گیت را بلدی؟"
+  description="شش پرسش از درس‌های «فرم‌های استاندارد» و «گیت‌ها»."
+  questions={[
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      text: 'مین‌ترم سطر ۱۰۱ (سه‌متغیره با ترتیب x,y,z) کدام است؟',
+      options: [
+        { id: 'a', text: 'xy′z' },
+        { id: 'b', text: 'x′yz′' },
+        { id: 'c', text: 'xyz' },
+      ],
+      correctAnswer: 'a',
+      explanation: 'مین‌ترم «همان که هست»: ۱ خودش می‌آید و ۰ نقیضش؛ پس x (یک) خودش، y (صفر) نقیضش و z (یک) خودش.'
+    },
+    {
+      id: 'q2',
+      type: 'multiple-choice',
+      text: 'ماکس‌ترم سطر ۰۱ (دو متغیره با ترتیب x,y) کدام است؟',
+      options: [
+        { id: 'a', text: 'x′ + y' },
+        { id: 'b', text: 'x + y′' },
+        { id: 'c', text: 'x′ + y′' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'ماکس‌ترم «برعکسش»: ۱ نقیض می‌آید و ۰ خودش؛ پس x (صفر) خودش و y (یک) نقیضش: (x + y′).'
+    },
+    {
+      id: 'q3',
+      type: 'multiple-choice',
+      text: 'اگر تابعی سه‌متغیره Σm(1,5) باشد، نماد ΠM آن کدام است؟',
+      options: [
+        { id: 'a', text: 'ΠM(1,5)' },
+        { id: 'b', text: 'ΠM(0,2,3,4,6,7)' },
+        { id: 'c', text: 'ΠM(2,6)' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'فهرست پی، مکمل فهرست سیگماست: همهٔ شماره‌های صفر تا هفت به‌جز ۱ و ۵.'
+    },
+    {
+      id: 'q4',
+      type: 'multiple-choice',
+      text: 'خروجی گیت XOR دو ورودی در سطر ۱-۱ چیست؟',
+      options: [
+        { id: 'a', text: '۱' },
+        { id: 'b', text: '۰' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'XOR یعنی «دقیقاً یکی»؛ وقتی هر دو ۱ باشند خروجی ۰ است. (OR در همین سطر ۱ می‌دهد.)'
+    },
+    {
+      id: 'q5',
+      type: 'true-false',
+      text: 'با فقط گیت NAND می‌شود هر مدار منطقی را ساخت.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'true',
+      explanation: 'NAND گیت جامع است: NOT و AND و OR هر سه را می‌شود فقط با NAND ساخت.'
+    },
+    {
+      id: 'q6',
+      type: 'multiple-choice',
+      text: 'دایرهٔ کوچک (حباب) سر پایهٔ گیت یعنی چه؟',
+      options: [
+        { id: 'a', text: 'تأخیر زمانی' },
+        { id: 'b', text: 'نقیض (وارونگی)' },
+        { id: 'c', text: 'ورودی غیرفعال' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'حباب یعنی نقیض؛ مثلاً حباب سر خروجی AND همان NAND است.'
+    },
+  ]}
+/>

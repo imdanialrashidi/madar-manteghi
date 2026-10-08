@@ -1,0 +1,18 @@
+---
+/**
+ * GatePlayground — Astro wrapper that hydrates the logic-gate explorer island.
+ *
+ * Content authors write `<GatePlayground />` in MDX. The island SSR-renders
+ * its initial state (AND with both inputs 1), so no-JS readers see a real
+ * truth table and the client only adds toggling.
+ */
+import GatePlayground from '../../islands/course/GatePlayground';
+
+interface Props {
+  initialGate?: string;
+}
+
+const { initialGate = 'AND' } = Astro.props;
+---
+
+<GatePlayground client:visible initialGate={initialGate} />

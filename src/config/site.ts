@@ -107,7 +107,7 @@ export const creatorLinks = [
  * it is not stored as a static URL.
  */
 export const heroCtas = {
-  primaryLabel: 'شروع یادگیری',
+  primaryLabel: 'شروع از پیش‌نیازها',
   secondaryLabel: 'جست‌وجو در دوره',
   secondaryHref: '/search',
   roadmapLabel: 'مشاهدهٔ نقشهٔ راه',

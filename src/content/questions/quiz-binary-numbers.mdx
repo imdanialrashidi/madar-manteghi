@@ -1,0 +1,84 @@
+---
+type: question
+title: "خودآزمایی اعداد و تبدیل مبنا"
+description: "شش پرسش از شمارش دودویی، تبدیل دهدهی و دودویی، بسته‌بندی هگز و مبنای هشت و کسرهای دودویی."
+section: chapter-1
+difficulty: beginner
+order: 1
+estimatedMinutes: 10
+points: 6
+instructions: "اول بدون ماشین‌حساب جواب بده، بعد بررسی کن. توضیح هر پاسخ غلط، درس مربوط را نشان می‌دهد."
+tags: [تمرین, تبدیل مبنا]
+prerequisites: [hex-fractions]
+---
+
+<Quiz
+  id="quiz-binary-numbers"
+  title="تبدیل مبناها را بلدی؟"
+  description="شش پرسش از درس «اعداد دودویی و تبدیل مبنا»."
+  questions={[
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      text: 'بعد از ۱۰۱ در شمارش دودویی چه می‌آید؟',
+      options: [
+        { id: 'a', text: '۱۰۲' },
+        { id: 'b', text: '۱۱۰' },
+        { id: 'c', text: '۱۱۱' },
+      ],
+      correctAnswer: 'b',
+      explanation: '۱۰۱ یعنی ۵ و بعدی‌اش ۶ یعنی ۱۱۰ است. رقم ۲ در دودویی وجود ندارد.'
+    },
+    {
+      id: 'q2',
+      type: 'numeric',
+      text: 'معادل دهدهی ۱۰۱۱۰ دودویی چیست؟ (فقط عدد)',
+      numericAnswer: 22,
+      tolerance: 0,
+      explanation: '۱۶ + ۴ + ۲ = ۲۲. وزن‌ها از راست: ۱، ۲، ۴، ۸، ۱۶.'
+    },
+    {
+      id: 'q3',
+      type: 'multiple-choice',
+      text: 'باقی‌مانده‌ها در تبدیل دهدهی به دودویی به چه ترتیبی خوانده می‌شوند؟',
+      options: [
+        { id: 'a', text: 'از اول به آخر' },
+        { id: 'b', text: 'از آخر به اول' },
+        { id: 'c', text: 'فرقی نمی‌کند' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'اولین باقی‌مانده کم‌ارزش‌ترین بیت است؛ خواندن از آخرین باقی‌مانده شروع می‌شود.'
+    },
+    {
+      id: 'q4',
+      type: 'multiple-choice',
+      text: 'عدد 2F هگز در دودویی چیست؟',
+      options: [
+        { id: 'a', text: '۰۰۱۰۱۱۱۱' },
+        { id: 'b', text: '۱۰۱۱۱۱' },
+        { id: 'c', text: 'هر دو درست‌اند' },
+      ],
+      correctAnswer: 'c',
+      explanation: '۲ می‌شود ۰۰۱۰ و F می‌شود ۱۱۱۱؛ صفرهای سمت چپ ارزشی ندارند پس هر دو نمایش درست است.'
+    },
+    {
+      id: 'q5',
+      type: 'true-false',
+      text: 'بسته‌بندی بیت‌ها برای تبدیل به مبنای ۸ همیشه از سمت چپ شروع می‌شود.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'false',
+      explanation: 'بسته‌بندی از ممیز شروع می‌شود: قسمت صحیح از راست و قسمت کسری از چپ.'
+    },
+    {
+      id: 'q6',
+      type: 'numeric',
+      text: 'ارزش دهدهی ۰٫۱۰۱ دودویی چیست؟ (با اعشار بنویس)',
+      numericAnswer: 0.625,
+      tolerance: 0.0001,
+      explanation: '۰٫۵ + ۰ + ۰٫۱۲۵ = ۰٫۶۲۵.'
+    },
+  ]}
+/>

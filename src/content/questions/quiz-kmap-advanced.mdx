@@ -1,0 +1,80 @@
+---
+type: question
+title: "خودآزمایی کارنو (۲)"
+description: "پنج پرسش از ایمپلیکانت ضروری، گروه‌بندی صفرها، شرط بی‌تفاوت و پیاده‌سازی NAND."
+section: chapter-3
+difficulty: advanced
+order: 2
+estimatedMinutes: 10
+points: 5
+instructions: "نقشه را روی کاغذ بکش و بعد بررسی کن. توضیح هر پاسخ، قانون مربوط را یادآوری می‌کند."
+tags: [تمرین, کارنو, POS]
+prerequisites: [kmap-pos-dontcare]
+---
+
+<Quiz
+  id="quiz-kmap-advanced"
+  title="کارنو را بلدی؟ (۲)"
+  description="پنج پرسش از درس‌های «ایمپلیکانت‌ها» و «POS و بی‌تفاوت»."
+  questions={[
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      text: 'ایمپلیکانت ضروری یعنی چه؟',
+      options: [
+        { id: 'a', text: 'بزرگ‌ترین گروه نقشه' },
+        { id: 'b', text: 'ایمپلیکانت اولی که یک مین‌ترم را به‌تنهایی پوشش می‌دهد' },
+        { id: 'c', text: 'گروهی که همهٔ مین‌ترم‌ها را بپوشاند' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'معیار اجباری‌بودن، «تنها پوشش‌دهندهٔ یک مین‌ترم بودن» است، نه بزرگی گروه.'
+    },
+    {
+      id: 'q2',
+      type: 'multiple-choice',
+      text: 'در گروه‌بندی صفرها (POS)، متغیری که در گروه همیشه ۱ است چطور می‌آید؟',
+      options: [
+        { id: 'a', text: 'خودش' },
+        { id: 'b', text: 'نقیضش' },
+        { id: 'c', text: 'حذف می‌شود' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'در POS قانون لیترال برعکس SOP است: همیشه‌۱ نقیض می‌آید، چون داری ماکس‌ترم می‌خوانی.'
+    },
+    {
+      id: 'q3',
+      type: 'true-false',
+      text: 'خانهٔ بی‌تفاوت را فقط وقتی به گروه اضافه می‌کنیم که گروه را بزرگ‌تر کند.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'true',
+      explanation: 'بی‌تفاوت ابزار اختیاری است؛ اضافه‌کردنی که گروه را بزرگ‌تر نکند فایده‌ای ندارد.'
+    },
+    {
+      id: 'q4',
+      type: 'multiple-choice',
+      text: 'پیاده‌سازی NAND/NAND تابع F = AB + CD در سطح دوم چیست؟',
+      options: [
+        { id: 'a', text: 'NANDِ خروجی دو NANDِ اول' },
+        { id: 'b', text: 'ANDِ خروجی دو NANDِ اول' },
+        { id: 'c', text: 'ORِ خروجی دو NANDِ اول' },
+      ],
+      correctAnswer: 'a',
+      explanation: 'قانون: SOP می‌شود NANDِ (NANDِ هر جمله). سطح دوم هم NAND است.'
+    },
+    {
+      id: 'q5',
+      type: 'multiple-choice',
+      text: 'حاصل x ⊕ ۱ چیست؟',
+      options: [
+        { id: 'a', text: 'x' },
+        { id: 'b', text: 'نقیض x' },
+        { id: 'c', text: '۱' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'XOR با یک، نقیض کنترل‌شده است: ورودی را وارونه می‌کند.'
+    },
+  ]}
+/>

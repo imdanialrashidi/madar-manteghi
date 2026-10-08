@@ -1,0 +1,75 @@
+---
+type: question
+title: "خودآزمایی پیش‌نیازها"
+description: "پنج پرسش کوتاه از عدد و مبنا، توان‌های ۲، متغیر و گزاره؛ بفهم آمادهٔ فصل ۱ هستی یا باید برگردی."
+section: prerequisites
+difficulty: beginner
+order: 1
+estimatedMinutes: 8
+points: 5
+instructions: "به هر پرسش پاسخ بده و «بررسی پاسخ‌ها» را بزن. هر پاسخی که غلط شد، توضیحش می‌گوید دقیقاً کدام درس را مرور کنی."
+tags: [تمرین, پیش‌نیاز]
+---
+
+<Quiz
+  id="quiz-prerequisites"
+  title="آماده‌ای وارد فصل ۱ شوی؟"
+  description="پنج پرسش کوتاه از همین بخش."
+  questions={[
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      text: 'در عدد ۲۵۲، ارزش رقم میانی (۵) چقدر است؟',
+      options: [
+        { id: 'a', text: '۵' },
+        { id: 'b', text: '۵۰' },
+        { id: 'c', text: '۵۰۰' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'رقم ۵ در جایگاه دهگان است و وزن دهگان ۱۰ است؛ پس ارزشش ۵۰ است. درس «عدد، رقم و مبنا» را مرور کن.'
+    },
+    {
+      id: 'q2',
+      type: 'multiple-choice',
+      text: 'کدام گزینه برابر ۲ به توان ۸ است؟',
+      options: [
+        { id: 'a', text: '۱۲۸' },
+        { id: 'b', text: '۲۵۶' },
+        { id: 'c', text: '۵۱۲' },
+      ],
+      correctAnswer: 'b',
+      explanation: '۲ به توان ۸ برابر ۲۵۶ است (۱۲۸ توان هفتم و ۵۱۲ توان نهم است). جدول توان‌های ۲ را از درس مبنا مرور کن.'
+    },
+    {
+      id: 'q3',
+      type: 'multiple-choice',
+      text: 'در عبارت A + B · C کدام عمل اول انجام می‌شود؟',
+      options: [
+        { id: 'a', text: 'جمع A + B' },
+        { id: 'b', text: 'ضرب B · C' },
+        { id: 'c', text: 'فرقی نمی‌کند' },
+      ],
+      correctAnswer: 'b',
+      explanation: 'ضرب منطقی (AND) بر جمع منطقی (OR) اولویت دارد؛ عبارت یعنی A + (B·C). بخش ترتیب عملیات درس سوم را ببین.'
+    },
+    {
+      id: 'q4',
+      type: 'true-false',
+      text: 'جملهٔ «لطفاً چراغ را روشن کن» یک گزاره است.',
+      options: [
+        { id: 'true', text: 'درست' },
+        { id: 'false', text: 'نادرست' },
+      ],
+      correctAnswer: 'false',
+      explanation: 'این جمله امر است و ارزش درستی (درست/نادرست) ندارد؛ پس گزاره نیست. تعریف گزاره را در مفهوم «گزاره» مرور کن.'
+    },
+    {
+      id: 'q5',
+      type: 'numeric',
+      text: 'با ۱۰ بیت چند حالت مختلف می‌توان ساخت؟ (فقط عدد بنویس)',
+      numericAnswer: 1024,
+      tolerance: 0,
+      explanation: 'با n بیت، ۲ به توان n حالت ساخته می‌شود؛ ۲ به توان ۱۰ برابر ۱۰۲۴ است.'
+    },
+  ]}
+/>

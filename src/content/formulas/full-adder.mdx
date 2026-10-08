@@ -1,0 +1,33 @@
+---
+type: formula
+title: "خروجی‌های تمام‌جمع‌کننده"
+name: "تمام‌جمع‌کننده (Full Adder)"
+description: "فرمول جمع و نقلی تمام‌جمع‌کننده با شهود XOR سه‌تایی و رأی اکثریت."
+section: chapter-4
+difficulty: intermediate
+order: 1
+estimatedMinutes: 5
+tags: [جمع‌کننده, نقلی, Full Adder]
+latex: "S = x \\oplus y \\oplus z, \\qquad C = xy + xz + yz"
+---
+
+## تمام‌جمع‌کننده چه می‌گوید؟
+
+<Formula
+  id="full-adder"
+  latex={"S = x \\oplus y \\oplus z, \\qquad C = xy + xz + yz"}
+  caption="جمع و نقلیِ جمع سه بیت"
+/>
+
+<FormulaBreakdown
+  title="اجزای فرمول"
+  terms={[
+    { term: "S", label: "بیت جمع", detail: "XOR سه‌تایی: ۱ است وقتی تعداد یک‌ها فرد باشد" },
+    { term: "C", label: "بیت نقلی", detail: "رأی اکثریت: ۱ است وقتی دست‌کم دو ورودی ۱ باشند" },
+    { term: "z", label: "نقلی ورودی", detail: "نقلیِ مرحلهٔ قبلی در جمع زنجیره‌ای" },
+  ]}
+/>
+
+<Callout type="tip" title="چرا این شهود مهم است؟">
+  اگر فرمول را فراموش کردی، جدول هشت سطری را بنویس: ستون جمع همان سطرهای فردِ تعداد یک، و ستون نقلی همان سطرهای دست‌کم‌دو-یک است. فرمول از همین دو جملهٔ فارسی به دست می‌آید.
+</Callout>

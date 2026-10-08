@@ -1,0 +1,34 @@
+---
+type: formula
+title: "قوانین دمورگان"
+name: "دمورگان (De Morgan)"
+description: "دو قانون دمورگان برای شکستن نقیض روی AND و OR، با شکل چندمتغیره و کاربرد در پیاده‌سازی NAND/NOR."
+section: chapter-2
+difficulty: beginner
+order: 1
+estimatedMinutes: 5
+tags: [دمورگان, نقیض, De Morgan]
+latex: "(x + y)' = x' \\cdot y', \\qquad (x \\cdot y)' = x' + y'"
+---
+
+## دمورگان چه می‌گوید؟
+
+<Formula
+  id="demorgan"
+  latex={"(x + y)' = x' \\cdot y', \\qquad (x \\cdot y)' = x' + y'"}
+  caption="قوانین دمورگان: نقیض را بشکن، عملگر را عوض کن"
+/>
+
+قانون یک‌خطی: **نقیضِ ترکیب، ترکیبِ نقیض‌هاست با عملگر برعکس**. «نه (A یا B)» یعنی «نه A و نه B»؛ «نه (A و B)» یعنی «نه A یا نه B».
+
+## شکل چندمتغیره
+
+<Formula
+  id="demorgan-multi"
+  latex={"(x_1 + x_2 + \\cdots + x_n)' = x_1' \\cdot x_2' \\cdots x_n'"}
+  caption="دمورگان برای n متغیر (برای ضرب هم قرینه‌اش برقرار است)"
+/>
+
+## چرا مهم است؟
+
+دو کاربرد بزرگ دارد: (۱) ساده‌سازی عبارت‌هایی که نقیض روی پرانتز دارند، (۲) تبدیل هر مدار به فرم NAND یا NOR — چون <Formula inline latex={"(xy)'"} /> خودش تعریف NAND است. هر وقت حبابی را از سر خروجی به سر ورودی‌ها بردی، داری دمورگان اجرا می‌کنی.

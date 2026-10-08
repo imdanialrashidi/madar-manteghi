@@ -1,0 +1,37 @@
+---
+type: formula
+title: "مکمل دو"
+name: "مکمل دو (Two's Complement)"
+description: "قانون مکمل دو و رابطهٔ تفریق با جمع: A منهای B برابر A به‌علاوهٔ مکمل دوی B است."
+section: chapter-1
+difficulty: beginner
+order: 4
+estimatedMinutes: 4
+tags: [مکمل, تفریق, Complement]
+latex: "\\text{2's complement of } N = 2^n - N, \\qquad A - B = A + (\\text{2's complement of } B)"
+concepts: [radix-complement, signed-numbers]
+conditions:
+  - "روی رشتهٔ n بیتی تعریف می‌شود."
+  - "نقلی بیرون‌افتاده از سمت چپ (bit nام) نادیده گرفته می‌شود."
+  - "نتیجه فقط وقتی درست است که سرریز رخ نداده باشد."
+---
+
+## مکمل دو چه می‌گوید؟
+
+<Formula
+  id="twos-complement"
+  latex={"\\text{2's complement of } N = 2^n - N"}
+  caption="مکمل دو: تفریق از ۲ به توان n"
+/>
+
+در عمل همان «معکوس کن و یکی اضافه کن». و قانون طلایی تفریق:
+
+<Formula
+  id="subtract-by-addition"
+  latex={"A - B = A + (\\text{2's complement of } B)"}
+  caption="تفریق با جمع: نقلی آخر را دور بینداز"
+/>
+
+چرا درست است؟ چون <Formula inline latex={"A + (2^n - B) = (A - B) + 2^n"} /> و آن <Formula inline latex={"2^n"} /> اضافه دقیقاً همان نقلی بیرون‌افتاده‌ای است که دور می‌اندازی. مدار فقط جمع می‌کند و همان مدار، تفریق را هم انجام می‌دهد.
+
+<Misconception wrong="نقلی آخرِ جمع مکمل دو همیشه یعنی سرریز." correct="نقلی آخر در تفریقِ موفق طبیعی است و دور انداخته می‌شود. سرریز را فقط با مقایسهٔ نقلی ورودی و خروجی بیت علامت تشخیص می‌دهند، نه با دیدن نقلی آخر." />

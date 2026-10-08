@@ -1,0 +1,37 @@
+---
+type: concept
+title: "مبنا و ارزش مکانی"
+short: "مبنا تعداد نمادهای مجاز است و ارزش هر رقم از جایگاهش به دست می‌آید."
+description: "مفهوم مبنا (رادیکس) و ارزش مکانی: چرا جایگاه رقم مهم است و وزن هر جایگاه چطور حساب می‌شود."
+section: prerequisites
+difficulty: beginner
+order: 2
+estimatedMinutes: 5
+tags: [مبنا, ارزش مکانی]
+---
+
+<Definition term="مبنا (Radix / Base)" id="base-def">
+  تعداد نمادهای یکتایی که یک دستگاه عددنویسی برای نوشتن عددها دارد. در مبنای <Formula inline latex={"r"} />، رقم‌های مجاز از <Formula inline latex={"0"} /> تا <Formula inline latex={"r-1"} /> هستند.
+</Definition>
+
+<Definition term="ارزش مکانی (Positional Value)" id="place-value-def">
+  ارزش هر رقم برابر است با رقم ضرب‌در وزن جایگاهش. وزن جایگاه <Formula inline latex={"i"} />ام (از راست، از صفر شروع می‌شود) برابر <Formula inline latex={"r^i"} /> است.
+</Definition>
+
+ارزش کامل یک عدد، جمع ارزش مکانی همهٔ رقم‌هایش است:
+
+<Formula id="positional-value" latex={"N = a_{n-1}r^{n-1} + \\cdots + a_1 r^1 + a_0 r^0"} caption="ارزش یک عدد در مبنای r" />
+
+<FormulaBreakdown
+  title="اجزای فرمول ارزش مکانی"
+  terms={[
+    { term: "N", label: "ارزش عدد", detail: "مقداری که عدد نشان می‌دهد" },
+    { term: "r", label: "مبنا", detail: "مثلاً ۱۰ برای دهدهی و ۲ برای دودویی" },
+    { term: "a_i", label: "رقم جایگاه iام", detail: "عددی بین صفر تا r-1" },
+    { term: "r^i", label: "وزن جایگاه", detail: "هرچه جایگاه چپ‌تر، وزن بزرگ‌تر" },
+  ]}
+/>
+
+<Callout type="tip" title="چرا این فرمول مهم است؟">
+  همین یک فرمول، موتور تبدیل مبناها در فصل ۱ است: برای تبدیل هر عدد از هر مبنا به دهدهی، کافی است همین جمع را حساب کنی. آن را حفظ نکن؛ بفهمش.
+</Callout>

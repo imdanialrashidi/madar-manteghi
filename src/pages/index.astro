@@ -128,14 +128,14 @@ const courseJsonLd = {
         )}
       </div>
 
-      {/* Course visual: a thin-stroke derivative plate, not decoration.
+      {/* Course visual: a thin-stroke AND-gate plate for Digital Logic, not decoration.
           Below `lg` it stacks under the text, capped and centered so it never
           becomes a full-bleed giant on tablets. */}
       <figure class="mx-auto min-w-0 w-full max-w-2xl overflow-hidden rounded-lg border border-line bg-surface lg:col-span-5 lg:max-w-none lg:self-center">
         <svg
           viewBox="0 0 400 260"
           role="img"
-          aria-label="نمودار یک تابع صعودی با خط مماس در یک نقطه — شیب مماس همان مشتق است"
+          aria-label="گیت AND با دو ورودی یک و خروجی یک — خروجی فقط وقتی یک است که هر دو ورودی یک باشند"
           class="block h-auto w-full"
         >
           <rect x="0.5" y="0.5" width="399" height="259" fill="none" />
@@ -148,32 +148,34 @@ const courseJsonLd = {
               <line x1="24" y1={44 + i * 44} x2="384" y2={44 + i * 44} />
             ))}
           </g>
-          {/* axes */}
+          {/* input wires */}
           <g stroke="currentColor" stroke-width="1.5" opacity="0.55" class="text-ink">
-            <line x1="24" y1="228" x2="384" y2="228" />
-            <line x1="40" y1="16" x2="40" y2="244" />
+            <line x1="40" y1="96" x2="150" y2="96" />
+            <line x1="40" y1="168" x2="150" y2="168" />
+            <line x1="272" y1="132" x2="360" y2="132" />
           </g>
-          {/* curve f(x) */}
+          {/* AND gate body */}
           <path
-            d="M40 208 C 110 200, 150 168, 195 138 S 300 76, 360 44"
+            d="M150 72 H212 A60 60 0 0 1 212 192 H150 Z"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
-            stroke-linecap="round"
+            stroke-linejoin="round"
             class="text-primary"
           />
-          {/* tangent at the marked point */}
-          <line x1="130" y1="196" x2="270" y2="92" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" class="text-accent" />
-          <circle cx="200" cy="142" r="5" fill="currentColor" class="text-accent" />
-          <circle cx="200" cy="142" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" class="text-accent" />
+          <text x="188" y="142" font-size="22" font-weight="bold" fill="currentColor" class="text-primary" text-anchor="middle">&amp;</text>
+          {/* signal values */}
+          <circle cx="40" cy="96" r="7" fill="currentColor" class="text-accent" />
+          <circle cx="40" cy="168" r="7" fill="currentColor" class="text-accent" />
+          <circle cx="360" cy="132" r="7" fill="currentColor" class="text-accent" />
           {/* labels */}
-          <text x="352" y="240" font-size="13" fill="currentColor" opacity="0.6" class="text-ink" text-anchor="middle">x</text>
-          <text x="28" y="32" font-size="13" fill="currentColor" opacity="0.6" class="text-ink" text-anchor="middle">y</text>
-          <text x="282" y="86" font-size="12.5" fill="currentColor" class="text-accent">مماس = مشتق</text>
-          <text x="120" y="222" font-size="12.5" fill="currentColor" opacity="0.75" class="text-ink">تابع</text>
+          <text x="62" y="88" font-size="13" fill="currentColor" opacity="0.75" class="text-ink">ورودی A = ۱</text>
+          <text x="62" y="160" font-size="13" fill="currentColor" opacity="0.75" class="text-ink">ورودی B = ۱</text>
+          <text x="296" y="120" font-size="13" fill="currentColor" class="text-accent">خروجی = ۱</text>
+          <text x="200" y="222" font-size="12.5" fill="currentColor" opacity="0.75" class="text-ink" text-anchor="middle">گیت AND — خروجی فقط وقتی ۱ است که هر دو ورودی ۱ باشند</text>
         </svg>
         <figcaption class="border-t border-line px-4 py-2.5 text-xs leading-relaxed text-ink-muted">
-          شیب خط مماس در هر نقطه، مشتق تابع در همان نقطه است — ایده‌ای که این دوره دور آن ساخته شده.
+          همین قانون ساده — ترکیب صفر و یک با گیت‌ها — پایهٔ همهٔ مدارهای این دوره است، از جمع‌کننده تا شمارنده.
         </figcaption>
       </figure>
     </div>
