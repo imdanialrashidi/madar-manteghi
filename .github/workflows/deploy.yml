@@ -7,6 +7,10 @@
 #
 # For a user/organisation site (https://<owner>.github.io) set the
 # `DEPLOY_BASE` repository variable to "/" in the repository settings.
+# For a GitHub Pages custom domain (e.g. https://madar-manteghi.danialrashidi.ir)
+# set `DEPLOY_BASE` to "/" and `SITE_URL` to the custom origin, then set the
+# same hostname under Settings → Pages → Custom domain. The `public/CNAME`
+# file carries that hostname into `dist/CNAME` so Pages routes it.
 
 name: deploy
 

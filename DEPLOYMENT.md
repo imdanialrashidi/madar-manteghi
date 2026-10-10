@@ -49,9 +49,25 @@ named `physics2` is served from `/physics2/`.
 1. Repository **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 2. Optionally add a `DEPLOY_BASE` repository variable:
    - user/organisation site (`https://user.github.io`) → set `DEPLOY_BASE` to `/`
+   - custom domain (this repo serves `https://madar-manteghi.danialrashidi.ir`) → set `DEPLOY_BASE` to `/`
    - otherwise leave it unset and the repository name is used.
 3. Optionally set `SITE_URL` to the canonical origin for correct `<link rel="canonical">`
-   and sitemap URLs.
+   and sitemap URLs. For this repo that is `https://madar-manteghi.danialrashidi.ir`.
+
+### Custom domain (`madar-manteghi.danialrashidi.ir`)
+
+DNS already points at GitHub Pages (`CNAME madar-manteghi.danialrashidi.ir → imdanialrashidi.github.io`).
+The remaining GitHub-side setup is:
+
+1. Keep `public/CNAME` containing exactly `madar-manteghi.danialrashidi.ir` (one line,
+   no protocol). Astro copies it to `dist/CNAME` on every build.
+2. Repository **Settings → Variables → Actions → New repository variable**:
+   - `DEPLOY_BASE` = `/` (root serve; without this the build emits `/madar-manteghi` prefixes and the custom domain 404s)
+   - `SITE_URL` = `https://madar-manteghi.danialrashidi.ir` (canonical + sitemap origin)
+3. Repository **Settings → Pages → Custom domain**: enter `madar-manteghi.danialrashidi.ir`,
+   save, then **Enforce HTTPS** once the certificate is issued.
+4. Push to `main` and wait for the `deploy` workflow to go green; the environment URL
+   becomes the custom domain.
 
 The workflow fails the build if content validation finds a problem, so a broken
 course never reaches production.
@@ -76,6 +92,15 @@ trailing slash).
 ---
 
 ## Local verification of a deployment
+
+Reproduce the custom-domain build for this repo before publishing:
+
+```bash
+BASE_PATH="" SITE_URL=https://madar-manteghi.danialrashidi.ir npm run build
+npm run validate:links
+npm run budgets
+cat dist/CNAME   # must print madar-manteghi.danialrashidi.ir
+```
 
 Reproduce a project-site build and check it before publishing:
 
