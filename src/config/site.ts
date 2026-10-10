@@ -132,16 +132,17 @@ export const telegramPopup = {
 } as const;
 
 /**
- * Public base URL. Overridden by the SITE_URL environment variable at build
- * time so CI can set the real origin without editing code.
+ * Public base URL for this course site (custom domain, root serve).
+ * The SITE_URL environment variable still wins when set (CI sets it
+ * explicitly), but the default needs no variables to be correct.
  */
-export const siteUrl: string = process.env.SITE_URL ?? PERSONAL_WEBSITE;
+export const siteUrl: string =
+  process.env.SITE_URL ?? 'https://madar-manteghi.danialrashidi.ir';
 
 /**
- * Deployment base path. Empty for a root deployment (Cloudflare Pages with a
- * custom domain, Netlify, or a user/organization GitHub Pages site). Set to
- * `/<repo-name>` for a GitHub Pages *project* site. CI derives it from the
- * repository name, so it is normally not edited by hand.
+ * Deployment base path. Empty: this site serves at the root of its custom
+ * domain. Kept env-driven only so a sub-path preview can still be built
+ * with BASE_PATH explicitly set; production needs no variables.
  */
 export const basePath: string = (process.env.BASE_PATH ?? '').replace(/\/$/, '');
 

@@ -8,13 +8,14 @@ import { remarkBaseLinks } from './src/lib/remark-base-links.mjs';
 /**
  * Deployment configuration.
  *
- * - Base path (project sites like GitHub Pages under `/repo/`) comes from
- *   BASE_PATH / SITE_URL environment variables so the same source deploys to
- *   root hosts (Cloudflare Pages custom domain) and project hosts without any
- *   provider-specific code.
+ * This site serves at the root of its custom domain
+ * (https://madar-manteghi.danialrashidi.ir), so the defaults below already
+ * point at the production origin with no base path. BASE_PATH / SITE_URL
+ * environment variables still win when set (CI sets them explicitly), but a
+ * plain `npm run build` with no env deploys correctly without any variables.
  */
 const basePath = (process.env.BASE_PATH ?? '').replace(/\/$/, '');
-const site = process.env.SITE_URL ?? 'https://imdanialrashidi.github.io';
+const site = process.env.SITE_URL ?? 'https://madar-manteghi.danialrashidi.ir';
 
 export default defineConfig({
   site,

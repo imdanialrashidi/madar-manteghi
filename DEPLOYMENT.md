@@ -41,33 +41,33 @@ Two things must carry the prefix:
 
 `.github/workflows/deploy.yml` builds and publishes on every push to `main`.
 
-The workflow derives the base path from the repository name, so a repository
-named `physics2` is served from `/physics2/`.
-
-**First-time setup:**
-
-1. Repository **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-2. Optionally add a `DEPLOY_BASE` repository variable:
-   - user/organisation site (`https://user.github.io`) → set `DEPLOY_BASE` to `/`
-   - custom domain (this repo serves `https://madar-manteghi.danialrashidi.ir`) → set `DEPLOY_BASE` to `/`
-   - otherwise leave it unset and the repository name is used.
-3. Optionally set `SITE_URL` to the canonical origin for correct `<link rel="canonical">`
-   and sitemap URLs. For this repo that is `https://madar-manteghi.danialrashidi.ir`.
+This repo serves `https://madar-manteghi.danialrashidi.ir` at the root.
+The origin (`SITE_URL`) and root base path (`BASE_PATH: ""`) are fixed in the
+workflow and as code defaults, so **no repository variables are needed**.
+A plain `npm run build` with no env produces the production output.
 
 ### Custom domain (`madar-manteghi.danialrashidi.ir`)
 
 DNS already points at GitHub Pages (`CNAME madar-manteghi.danialrashidi.ir → imdanialrashidi.github.io`).
-The remaining GitHub-side setup is:
+Everything else lives in the repo:
 
-1. Keep `public/CNAME` containing exactly `madar-manteghi.danialrashidi.ir` (one line,
+1. `public/CNAME` contains exactly `madar-manteghi.danialrashidi.ir` (one line,
    no protocol). Astro copies it to `dist/CNAME` on every build.
-2. Repository **Settings → Variables → Actions → New repository variable**:
-   - `DEPLOY_BASE` = `/` (root serve; without this the build emits `/madar-manteghi` prefixes and the custom domain 404s)
-   - `SITE_URL` = `https://madar-manteghi.danialrashidi.ir` (canonical + sitemap origin)
-3. Repository **Settings → Pages → Custom domain**: enter `madar-manteghi.danialrashidi.ir`,
+2. The workflow hardcodes `BASE_PATH: ""` (root serve) and
+   `SITE_URL: https://madar-manteghi.danialrashidi.ir` (canonical + sitemap origin).
+3. `astro.config.mjs` and `src/config/site.ts` default to the same origin with
+   an empty base path, so local builds match CI with zero env.
+
+The only clicks left are in GitHub (cannot be stored in code):
+
+1. Repository **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Repository **Settings → Pages → Custom domain**: enter `madar-manteghi.danialrashidi.ir`,
    save, then **Enforce HTTPS** once the certificate is issued.
-4. Push to `main` and wait for the `deploy` workflow to go green; the environment URL
-   becomes the custom domain.
+3. Push to `main` and wait for the `deploy` workflow to go green.
+
+If Pages still shows 404 after a green deploy, it is almost always one of the
+two clicks above (wrong Source, or the custom domain not saved yet) — the
+build itself needs no variables.
 
 The workflow fails the build if content validation finds a problem, so a broken
 course never reaches production.
@@ -93,25 +93,18 @@ trailing slash).
 
 ## Local verification of a deployment
 
-Reproduce the custom-domain build for this repo before publishing:
+Production for this repo is a plain build — no env needed:
 
 ```bash
-BASE_PATH="" SITE_URL=https://madar-manteghi.danialrashidi.ir npm run build
+npm run build
 npm run validate:links
 npm run budgets
 cat dist/CNAME   # must print madar-manteghi.danialrashidi.ir
 ```
 
-Reproduce a project-site build and check it before publishing:
-
-```bash
-BASE_PATH=/physics2 SITE_URL=https://imdanialrashidi.github.io npm run build
-BASE_PATH=/physics2 npm run validate:links
-BASE_PATH=/physics2 npm run budgets
-
-# Serve it the way a static host would, including the prefix.
-npx serve dist        # then open http://localhost:3000/physics2/
-```
+(The workflow sets the same `BASE_PATH=""` / `SITE_URL` explicitly, so CI
+and local builds match. A sub-path preview can still be built with
+`BASE_PATH=/prefix` explicitly set.)
 
 `npm run validate:links` is base-path aware: it strips `BASE_PATH` before
 resolving each link against the files in `dist/`.

@@ -1,16 +1,11 @@
-# Minimal static deployment for GitHub Pages (project sites under /<repo>/).
+# Static deployment for GitHub Pages on the custom domain
+# https://madar-manteghi.danialrashidi.ir (root serve, no sub-path).
 #
-# Node 22 is the version this template is developed and verified against.
+# Node 22 is the version this site is developed and verified against.
 # Pages runs `npm ci` + `npm run build` from the repository root and publishes
-# the `dist/` artifact. BASE_PATH is derived from the repository name so the
-# same source also works on Cloudflare Pages without editing any file.
-#
-# For a user/organisation site (https://<owner>.github.io) set the
-# `DEPLOY_BASE` repository variable to "/" in the repository settings.
-# For a GitHub Pages custom domain (e.g. https://madar-manteghi.danialrashidi.ir)
-# set `DEPLOY_BASE` to "/" and `SITE_URL` to the custom origin, then set the
-# same hostname under Settings → Pages → Custom domain. The `public/CNAME`
-# file carries that hostname into `dist/CNAME` so Pages routes it.
+# the `dist/` artifact. The origin and root base path are fixed below so no
+# repository variables are needed. The `public/CNAME` file carries the custom
+# hostname into `dist/CNAME` so Pages routes it.
 
 name: deploy
 
@@ -46,10 +41,10 @@ jobs:
 
       - name: Build static site
         env:
-          # A repo named "physics2" is served from /physics2/, so every asset
-          # and link Astro emits has to carry that prefix.
-          BASE_PATH: ${{ vars.DEPLOY_BASE || format('/{0}', github.event.repository.name) }}
-          SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+          # Custom domain serves at the root: no base-path prefix, fixed origin.
+          # No repository variables required.
+          BASE_PATH: ""
+          SITE_URL: https://madar-manteghi.danialrashidi.ir
         run: npm run build
 
       - name: Validate built output
